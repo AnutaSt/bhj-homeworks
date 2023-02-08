@@ -39,3 +39,5 @@ function clickCheckbox() {
 		}
 		parentChecked(parent.closest('li.interest'));
 	}
+	
+}
