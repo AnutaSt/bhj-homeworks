@@ -20,7 +20,7 @@ function sendMessage(event) {
 	let send = event.key;
 	if (send !== "Enter") return;
 	const time = new Date();
-	if (textField.value.length > 0){
+	/*if (textField.value.length > 0){
 		chat.innerHTML += `
 		  <div class="message message_client">
 			<div class="message__time">${time.getHours()}:${('0' + time.getMinutes()).slice(-2)}</div>
@@ -28,7 +28,16 @@ function sendMessage(event) {
 			  ${textField.value}
 			</div>
 		  </div>
-		`;
+		`;*/
+		if (textField.value.trim()) {
+			chat.innerHTML += `
+			  <div class="message message_client">
+				<div class="message__time">${time.getHours()}:${('0' + time.getMinutes()).slice(-2)}</div>
+				<div class="message__text">
+				  ${textField.value.trim()}
+				</div>
+			  </div>
+			`;
 		textField.value = '';
 		setMessageBot(false);
 		chat.parentElement.scrollTop = chat.parentElement.scrollHeight;
